@@ -1,0 +1,35 @@
+﻿@page "{blogId:guid}"
+@model Details
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+
+    <h1 class="display-4">Blog (@Model.BlogId)</h1>
+    
+    @if (Model.Blog is not null)
+    {
+        <h2>@Model.Blog.Title</h2>
+
+        <ul>
+            @foreach (var post in Model.Blog.Posts)
+            {
+                <li>@post.Content</li>
+            }
+        </ul>
+        
+        <form method="post">
+            
+            <div class="form-group mb-3">
+                <label asp-for="PostContent" class="control-label">Add post</label>
+                <input asp-for="PostContent" class="form-control" />
+            </div>
+
+            <button type="submit" asp-page-handler="AddPost" class="btn btn-warning">Add Post</button>
+            
+        </form>
+    }
+
+</div>

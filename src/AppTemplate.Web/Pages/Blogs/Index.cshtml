@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Blogs</h1>
+    
+    @foreach (var blog in Model.BlogHeaders)
+    {
+        <p><a asp-page="/Blogs/Details" asp-route-blogId="@blog.Id.ToString()">@blog.Title</a></p>    
+    }
+
+    <form method="post">
+
+        <div class="form-group mb-3">
+            <label asp-for="BlogTitle" class="control-label">Add blog</label>
+            <input asp-for="BlogTitle" class="form-control" />
+        </div>
+
+        <button type="submit" asp-page-handler="AddBlog" class="btn btn-warning">Add Blog</button>
+
+    </form>
+    
+</div>

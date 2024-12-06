@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "https://github.com/pillepalle1 https://t.me/pillepalle1",
+    "classifications": [
+      "aspcore"
+    ],
+    "identity": "PillepalleWebApp",
+    "name": "WebApi and WebApp (by Pillepalle1)",
+    "shortName": "webappapi",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "AppTemplate",
+    "preferNameDirectory": true
+  }
