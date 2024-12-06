@@ -9,8 +9,8 @@ var app = builder.Build();
 // Database initialization and migrations here
 using (var scope = app.Services.CreateScope())
 {
-    var statsDbInitializer = scope.ServiceProvider.GetRequiredService<IDatabasesInitializer>();
-    await statsDbInitializer.InitializeAllAsync();
+    var blogDbInitializer = scope.ServiceProvider.GetRequiredService<IDatabasesInitializer>();
+    await blogDbInitializer.InitializeAllAsync();
 }
 
 app.AddBlogCommands();
